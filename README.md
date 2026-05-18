@@ -6,6 +6,10 @@ This repository contains the packages and launch files required to run autonomou
 
 Before building the packages, ensure your system has ROS 2 (Jazzy) and the necessary navigation and TurtleBot 4 packages installed.
 
+### TurtleBot 4 Basic Setup
+If you have not already configured your TurtleBot 4 hardware and network, please complete the official initial setup before proceeding:
+[TurtleBot 4 Basic Setup Guide](https://turtlebot.github.io/turtlebot4-user-manual/setup/basic.html)
+
 ### Install ROS 2
 Ensure you have ROS 2 Jazzy installed on your Ubuntu system. If you haven't installed it yet, follow the [official ROS 2 Jazzy installation guide](https://docs.ros.org/en/jazzy/Installation.html).
 
@@ -23,7 +27,15 @@ sudo apt install ros-jazzy-rmw-fastrtps-cpp
 
 This project relies on two main workspaces that need to be built: `m-explore-ros2` (the frontier exploration logic) and `tb4_ws` (your custom robot bringup and launch files).
 
-Navigate to the root of your project directory (`~/484_finalproj_frontier`) and build both packages using `colcon`.
+Navigate to the root of your project directory (`~/484_finalproj_frontier`) and clone the `m-explore-ros2` package from GitHub:
+
+```bash
+mkdir -p ~/484_finalproj_frontier
+cd ~/484_finalproj_frontier
+git clone https://github.com/robo-friends/m-explore-ros2.git
+```
+
+Once cloned, build both packages using `colcon`.
 
 **Build `m-explore-ros2`:**
 
